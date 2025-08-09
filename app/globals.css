@@ -1,3 +1,20 @@
 @import "tailwindcss";
 /* Note: You may need to change the path to fit your project structure */
 @config "../tailwind.config.ts";
+
+
+html {
+  font-size: calc(var(--scale-width) * 16px);
+}
+
+:root {
+  --scale-width: 1;
+  --scroll-bar-width: 0;
+}
+
+
+/* Icons */
+.icon24 {
+  width: 1.5rem;
+  height: 1.5rem;
+}

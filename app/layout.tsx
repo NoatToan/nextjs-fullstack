@@ -26,8 +26,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
+      <head>
+        {/* Ignore zoom in mobile */}
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased
+          transition-[font-size] duration-[font-size]-1000 ease-in-out
+          `}
       >
         <Providers>{children}</Providers>
       </body>
