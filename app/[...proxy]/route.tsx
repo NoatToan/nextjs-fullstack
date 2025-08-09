@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 async function handler(request: NextRequest) {
+  console.log('123',123);
   // const headers = new Headers(request.headers);
   // headers.set('Authorization', `Bearer ${session?.accessToken}`);
 
@@ -16,4 +17,7 @@ async function handler(request: NextRequest) {
 
 export const dynamic = 'force-dynamic';
 
-export { handler as GET, handler as POST };
+export {
+  // handler as GET,
+  handler as POST,
+};

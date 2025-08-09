@@ -1,8 +1,8 @@
 // import type { Metadata } from 'next';
+import { HeroUIProvider } from '@heroui/react';
+import { ViewTransitions } from 'next-view-transitions';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { Providers } from './providers';
-import { SessionProvider } from 'next-auth/react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,21 +25,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <head>
-        {/* Ignore zoom in mobile */}
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
-        />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased
+    <ViewTransitions>
+      <html lang='en' suppressHydrationWarning>
+        <head>
+          {/* Ignore zoom in mobile */}
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+          />
+        </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased
           transition-[font-size] duration-[font-size]-1000 ease-in-out
           `}
-      >
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+        >
+          <HeroUIProvider>{children}</HeroUIProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

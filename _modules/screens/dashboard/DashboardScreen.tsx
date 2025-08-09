@@ -6,7 +6,7 @@ export default function DashboardScreen() {
 
   const sessionClient = useSession();
   return (
-    <div className='font-sans min-h-screen'>
+    <div className='font-sans'>
       <h1 className='text-2xl font-bold'>Dashboard</h1>
       <p>Welcome to the dashboard!</p>
       {JSON.stringify(sessionClient, null, 2)}

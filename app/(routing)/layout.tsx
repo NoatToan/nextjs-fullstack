@@ -1,7 +1,7 @@
 'use client';
 
-import useWindowSize from '@/_modules/commons/useWindowSize';
-import { useEffect, useMemo } from 'react';
+import PageWrapper from '@/_modules/components/PageWrapper';
+import { useEffect } from 'react';
 
 const BASE_WIDTH = 1920;
 const MEDIUM_SCREEN = 576;
@@ -53,5 +53,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  return children;
+  return <PageWrapper>{children}</PageWrapper>;
 }
