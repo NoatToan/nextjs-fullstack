@@ -1,38 +1,40 @@
 'use client';
-import { actionLogin } from '@/app/lib/actions';
-import { Button } from '@heroui/react';
-import { useActionState } from 'react';
+
+import { signIn } from 'next-auth/react';
+import { redirect, useRouter } from 'next/navigation';
 
 export default function LoginScreen() {
-  const [errorMessage, formAction, isPending] = useActionState(
-    actionLogin,
-    undefined
-  );
+  // const csrfToken = await getCsrfToken();
+  const router = useRouter();
 
   return (
     <div>
-      <form className='space-y-3' onSubmit={formAction}>
-        Login Screen
-        <input
-          className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500'
-          id='email'
-          type='email'
-          name='email'
-          placeholder='Enter your email address'
-          required
-        />
-        <input
-          className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500'
-          id='password'
-          type='password'
-          name='password'
-          placeholder='Enter password'
-          required
-          minLength={6}
-        />
-        <Button className='mt-4 w-full' type='submit'>
-          Log in
-        </Button>
+      <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+          try {
+            await signIn('credentials', {
+              email: 'tony',
+              password: 'tony',
+              redirect: false,
+            });
+
+            router.replace('/dashboard');
+          } catch (error) {
+            console.log('error', error);
+            // throw error;
+          }
+        }}
+      >
+        <label htmlFor='email'>
+          Email
+          <input name='email' id='email' />
+        </label>
+        <label htmlFor='password'>
+          Password
+          <input name='password' id='password' />
+        </label>
+        <input type='submit' value='Sign In' />
       </form>
     </div>
   );
