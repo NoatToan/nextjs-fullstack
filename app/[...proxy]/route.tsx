@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 // async function handler(request: NextRequest) {
 async function handler() {
-  console.log('123', 123);
+  console.log('123 handler');
   // const headers = new Headers(request.headers);
   // headers.set('Authorization', `Bearer ${session?.accessToken}`);
 

@@ -14,6 +14,7 @@
     "bcrypt": "^6.0.0",
     "framer-motion": "^12.23.12",
     "i18next": "^25.3.2",
+    "mongoose": "^8.17.1",
     "next": "15.4.6",
     "next-auth": "^4.24.11",
     "next-view-transitions": "^0.3.4",

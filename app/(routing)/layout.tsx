@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 const BASE_WIDTH = 1920;
 const MEDIUM_SCREEN = 576;
-export const MOBILE_SCREEN = 640;
+// const MOBILE_SCREEN = 640;
 
 const onResize = () => {
   const updateScaleVarCss = (value: number) => {
