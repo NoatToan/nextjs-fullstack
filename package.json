@@ -1,12 +1,13 @@
 {
   "name": "nextjs-fullstack",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "tsc --noemit && next lint"
   },
   "dependencies": {
     "@heroui/react": "^2.8.2",

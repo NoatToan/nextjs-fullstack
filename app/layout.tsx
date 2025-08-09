@@ -36,7 +36,6 @@ export default function RootLayout({
         </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased
-          transition-[font-size] duration-[font-size]-1000 ease-in-out
           `}
         >
           <HeroUIProvider>{children}</HeroUIProvider>

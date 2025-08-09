@@ -1,4 +1,6 @@
 'use client';
+import NextComponent from '@/_modules/components/NextComponent';
+import { Link } from '@heroui/react';
 import { useSession } from 'next-auth/react';
 
 export default function DashboardScreen() {
@@ -10,6 +12,9 @@ export default function DashboardScreen() {
       <h1 className='text-2xl font-bold'>Dashboard</h1>
       <p>Welcome to the dashboard!</p>
       {JSON.stringify(sessionClient, null, 2)}
+      <Link as={NextComponent.NextLink} href='/home'>
+        Home
+      </Link>
     </div>
   );
 }

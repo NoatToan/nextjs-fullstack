@@ -10,6 +10,7 @@ const PageWrapper = (props: HTMLMotionProps<'div'>) => {
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0 }}
+        layout
         {...props}
       />
     </div>

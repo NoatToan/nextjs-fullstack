@@ -1,7 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
-async function handler(request: NextRequest) {
-  console.log('123',123);
+// async function handler(request: NextRequest) {
+async function handler() {
+  console.log('123', 123);
   // const headers = new Headers(request.headers);
   // headers.set('Authorization', `Bearer ${session?.accessToken}`);
 
